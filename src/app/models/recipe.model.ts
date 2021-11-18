@@ -1,0 +1,12 @@
+export class RecipeModel {
+  public id: number;
+  public name: string;
+  public description: string;
+  public imgPath: string;
+
+  constructor(name: string, desc: string, img: string) {
+    this.name = name;
+    this.description = desc;
+    this.imgPath = img;
+  }
+}
