@@ -1,26 +1,32 @@
-{"recipes":  [
+{
+  "recipes": [
     {
-        "id":1,
-      "name":"Spaghetti alla chitarra",
-      "description":"Un particolare tipo di pasta che...",
-      "imgPath":"https://images.lacucinaitaliana.it/wp-content/uploads/2020/06/03204258/Pasta-alla-chitarra-con-ragu-di-polo.jpg"
+      "id": 1,
+      "name": "Spaghetti alla chitarra",
+      "description": "Un particolare tipo di pasta che...",
+      "imgPath": "https://images.lacucinaitaliana.it/wp-content/uploads/2020/06/03204258/Pasta-alla-chitarra-con-ragu-di-polo.jpg",
+      "ingredients": []
     },
     {
-        "id":2,
-        "name":"Lasagne alla bolognese",
-      "description":"Pasta emiliano molto calorica sempre presente nei menù",
-      "imgPath":"https://images.lacucinaitaliana.it/gallery/119939/Big/be774eb0-09eb-4e1e-940d-72e38cea3ac3.jpg"
+      "id": 2,
+      "name": "Lasagne alla bolognese",
+      "description": "Pasta emiliano molto calorica sempre presente nei menù",
+      "imgPath": "https://images.lacucinaitaliana.it/gallery/119939/Big/be774eb0-09eb-4e1e-940d-72e38cea3ac3.jpg",
+      "ingredients": []
     },
     {
-        "id":3,
-      "name":"Gnocchi ai formaggi",
-      "description":"Gnocchi al formaggio",
-      "imgPath":"https://images.fidhouse.com/fidelitynews/wp-content/uploads/sites/6/2017/05/1495792337_13c855513b63705bb079c377ed01563d4eb12ccc-223759579.jpg?w=580"
+      "id": 3,
+      "name": "Gnocchi ai formaggi",
+      "description": "Gnocchi al formaggio",
+      "imgPath": "https://images.fidhouse.com/fidelitynews/wp-content/uploads/sites/6/2017/05/1495792337_13c855513b63705bb079c377ed01563d4eb12ccc-223759579.jpg?w=580",
+      "ingredients": []
     },
     {
-        "id":4,
-      "name":"Tiramisù",
-      "description":"Dolce bono",
-      "imgPath":"https://ricetta.it/Uploads/Imgs/tiramisu-classico.jpg"
+      "id": 4,
+      "name": "Tiramisù",
+      "description": "Dolce bono",
+      "imgPath": "https://ricetta.it/Uploads/Imgs/tiramisu-classico.jpg",
+      "ingredients": []
     }
-  ]}
+  ]
+}
