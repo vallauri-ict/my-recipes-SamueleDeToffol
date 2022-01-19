@@ -17,7 +17,6 @@ export class ShoppingListService {
   };
 
   addIngredient = (ingredient: IngredientModel) => {
-
     let data =
       this.ingredients.find(
         (aus) => aus.name.toUpperCase() === ingredient.name.toUpperCase()
@@ -38,7 +37,7 @@ export class ShoppingListService {
 
   addIngredients = (ingredients: IngredientModel[]) => {
     for (const ingredient of ingredients) {
-
+      this.addIngredient(ingredient);
     }
   };
 
