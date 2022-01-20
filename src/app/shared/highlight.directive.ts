@@ -10,15 +10,17 @@ import {
   selector: '[appHighlight]',
 })
 export class HighlightDirective implements OnInit {
-  @Input('appHighlight') hoverColor: string = 'Cyan';
+  @Input('appHighlight') hoverColor: string | undefined = 'Cyan';
   @Input() defaultColor: string = 'LightCyan';
   @HostBinding('style.backgroundColor') backgroundColor: string =
     this.defaultColor;
   @HostListener('mouseenter') evidenzia() {
-    this.backgroundColor = this.hoverColor;
+    this.backgroundColor = (
+      (this.hoverColor as string) ? this.hoverColor : 'cyan'
+    ) as string;
   }
-  @HostListener('mouseleave') rilascia(){
-    this.backgroundColor=this.defaultColor;
+  @HostListener('mouseleave') rilascia() {
+    this.backgroundColor = this.defaultColor;
   }
   constructor() {}
 
