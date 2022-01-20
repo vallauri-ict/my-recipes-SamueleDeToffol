@@ -14,18 +14,18 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-      <div class="button-group" appDropdown>
-          <button class="btn btn-primary dropdown-toggle">
-              Manage Recipe
-              <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-              <li (click)="sendToShoppingList()"><a href="#" >To Shopping List</a></li>
-              <li><a href="#">Edit Recipe</a></li>
-              <li><a href="#">Delete Recipe</a></li>
-          </ul>
-      </div>
-      <!-- <button class="btn-primary" (click)="sendToShoppingList()">To shopping list</button> -->
+    <div class="button-group" appDropdown>
+      <button class="btn btn-primary dropdown-toggle">
+        Manage Recipe
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="sendToShoppingList()">To Shopping List</a></li>
+        <li><a>Edit Recipe</a></li>
+        <li><a>Delete Recipe</a></li>
+      </ul>
+    </div>
+    <!-- <button class="btn-primary" (click)="sendToShoppingList()">To shopping list</button> -->
   </div>
 </div>
 <div class="row">
@@ -42,4 +42,3 @@
     </div>
   </div>
 </div>
-

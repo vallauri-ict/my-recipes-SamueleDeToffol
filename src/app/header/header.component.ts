@@ -7,7 +7,6 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  @Output() featureSelected = new EventEmitter<string>();
 
   collapsed: boolean = true;
 
@@ -15,8 +14,4 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSelect(feature: string) {
-    
-    this.featureSelected.emit(feature);
-  }
 }
