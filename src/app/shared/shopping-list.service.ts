@@ -7,16 +7,21 @@ import { DataStorageService } from './data-storage.service';
 })
 export class ShoppingListService {
   ingredients: IngredientModel[] = [];
+
   constructor(private dataStorageService: DataStorageService) {}
 
-  getIngredients = () => {
-    this.dataStorageService.sendGetRequest('shopping-list').subscribe(
-      (data) => (this.ingredients = data as IngredientModel[]),
-      (err) => console.error(err)
+  getIngredients() {
+    this.dataStorageService.getRequest('shopping-list').subscribe(
+      (data) => {
+        this.ingredients = data as IngredientModel[];
+      },
+      (error) => {
+        console.error(error);
+      }
     );
-  };
+  }
 
-  addIngredient = (ingredient: IngredientModel) => {
+  addIngredient(ingredient: IngredientModel) {
     let data =
       this.ingredients.find(
         (aus) => aus.name.toUpperCase() === ingredient.name.toUpperCase()
@@ -33,37 +38,39 @@ export class ShoppingListService {
         }
       });
     }
-  };
+  }
 
-  addIngredients = (ingredients: IngredientModel[]) => {
+  addIngredients(ingredients: IngredientModel[]) {
+    // this.ingredients.push(...ingredients);
     for (const ingredient of ingredients) {
       this.addIngredient(ingredient);
     }
-  };
+  }
 
-  postIngredient = (ingredient: IngredientModel) => {
+  postIngredient(ingredient: IngredientModel) {
     this.dataStorageService
       .sendPostRequest('shopping-list', ingredient)
       .subscribe(
-        (succ) => {
-          console.log(succ);
+        (data) => {
+          console.log(data);
           this.getIngredients();
         },
-        (err) => {
-          console.error(err);
+        (error) => {
+          console.error(error);
         }
       );
-  };
-  patchIngredient = (data: object, id: number) => {
+  }
+
+  patchIngredient(data: object, id: number) {
     this.dataStorageService
-      .sendPatchtRequest('shopping-list/' + id, data)
+      .sendPatchRequest('shopping-list/' + id, data)
       .subscribe(
-        (succ) => {
-          console.log(succ);
+        (data) => {
+          console.log(data);
         },
-        (err) => {
-          console.error(err);
+        (error) => {
+          console.error(error);
         }
       );
-  };
+  }
 }

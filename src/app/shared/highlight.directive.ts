@@ -10,21 +10,22 @@ import {
   selector: '[appHighlight]',
 })
 export class HighlightDirective implements OnInit {
-  @Input('appHighlight') hoverColor: string | undefined = 'Cyan';
+  @Input('appHighlight') hoverColor: any = 'Cyan';
   @Input() defaultColor: string = 'LightCyan';
   @HostBinding('style.backgroundColor') backgroundColor: string =
     this.defaultColor;
+
   @HostListener('mouseenter') evidenzia() {
-    this.backgroundColor = (
-      (this.hoverColor as string) ? this.hoverColor : 'cyan'
-    ) as string;
+    this.backgroundColor = this.hoverColor ? this.hoverColor : 'Cyan';
   }
+
   @HostListener('mouseleave') rilascia() {
     this.backgroundColor = this.defaultColor;
   }
+
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.backgroundColor = this.defaultColor;
   }
 }

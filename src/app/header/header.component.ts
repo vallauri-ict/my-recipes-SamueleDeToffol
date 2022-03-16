@@ -1,17 +1,22 @@
-import { Component, OnInit, Output } from '@angular/core';
-import { EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
-  collapsed: boolean = true;
+  collapsed:boolean=true;
 
-  constructor() {}
+  constructor(private router:Router) { }
 
   ngOnInit(): void {}
 
+  show(page:string)
+  {
+    this.router.navigateByUrl(page);
+  }
+  
 }

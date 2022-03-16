@@ -1,4 +1,10 @@
-<a appHighlight (click)="onSelected()" class="list-group-item clearfix">
+<a
+  [routerLink]="[recipe.id]"
+  routerLinkActive="active"
+  class="list-group-item clearfix"
+  appHighlight
+  [defaultColor]="'lightYellow'"
+>
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
     <p class="list-group-item-test">{{ recipe.description }}</p>
@@ -7,7 +13,7 @@
     <img
       [src]="recipe.imagePath"
       alt="recipe.name"
-      class="img-responsive"
+      class="img-responsive.class"
       style="max-height: 50px"
     />
   </span>

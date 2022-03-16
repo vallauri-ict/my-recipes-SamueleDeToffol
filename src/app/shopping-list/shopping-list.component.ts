@@ -8,30 +8,13 @@ import { ShoppingListService } from '../shared/shopping-list.service';
   styleUrls: ['./shopping-list.component.css'],
 })
 export class ShoppingListComponent implements OnInit {
-  ingredients: IngredientModel[] = [
-    new IngredientModel('Pasta', 500),
-    new IngredientModel('Pomodori', 2),
-  ];
-
   constructor(public shoppingListService: ShoppingListService) {}
 
   ngOnInit(): void {
     this.shoppingListService.getIngredients();
   }
 
-  addIngredient = (ingredient: IngredientModel) => {
-    let data =
-      this.ingredients.find(
-        (aus) => aus.name.toUpperCase() === ingredient.name.toUpperCase()
-      ) ?? null;
-    if (!data) this.ingredients.push(ingredient);
-    else {
-      this.ingredients.map((aus) =>
-        aus.name.toUpperCase() === ingredient.name.toUpperCase()
-          ? (aus.amount += ingredient.amount)
-          : null
-      );
-    }
-    this.shoppingListService.addIngredient(ingredient);
-  };
+  onIngredientAdded(newIngredient: IngredientModel) {
+    this.shoppingListService.addIngredient(newIngredient);
+  }
 }
